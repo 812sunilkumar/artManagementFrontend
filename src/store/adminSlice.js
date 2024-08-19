@@ -18,6 +18,7 @@ export const createArtType = createAsyncThunk('admin/createArtType', async (name
 
 export const fetchDashboardMetrics = createAsyncThunk('admin/fetchDashboardMetrics', async ({ startDate, endDate }) => {
   const response = await api.get('/admin/dashboard', { params: { startDate, endDate } });
+  console.log('response-fetchDashboardMetrics', response)
   return response.data;
 });
 

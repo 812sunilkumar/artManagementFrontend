@@ -16,7 +16,8 @@ const Login = () => {
       await dispatch(login({ username, password })).unwrap();
       navigate('/dashboard');
     } catch (error) {
-      alert(error.message);
+        console.log('error', error);
+      alert(error);
     }
   };
 

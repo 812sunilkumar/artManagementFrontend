@@ -23,14 +23,23 @@ const Navbar = () => {
         <Box>
           {user ? (
             <>
-              <Button color="inherit" component={RouterLink} to="/dashboard">
+            {user.role == 'admin' && (
+                
+                <>
+                <Button color="inherit" component={RouterLink} to="/art-types">
+                ArtTypeManagement
+              </Button>
+                </>
+            )}
+            {user.role == 'employee' && (
+                
+                <>
+                <Button color="inherit" component={RouterLink} to="/dashboard">
                 Dashboard
               </Button>
-              {user.role === 'admin' && (
-                <Button color="inherit" component={RouterLink} to="/art-types">
-                  Art Types
-                </Button>
-              )}
+                </>
+            )}
+              
               <Button color="inherit" onClick={handleLogout}>
                 Logout
               </Button>
